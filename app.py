@@ -5,11 +5,13 @@ import math
 app=Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
+@cross_origin()
 def homepage():
     return render_template('file1_updated.html')
 
 
 @app.route('/math',methods=['GET','POST'])
+@cross_origin()
 def math_operation():
     if request.method=='POST':
         ops=request.form['operation']
